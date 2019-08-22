@@ -1,0 +1,6 @@
+header .navbar-brand{
+    letter-spacing: 1px;
+}
+main .display,.lead{
+    letter-spacing: 2px;
+}

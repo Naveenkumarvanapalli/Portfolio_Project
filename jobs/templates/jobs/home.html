@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,8 +20,8 @@
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="#">LinkedIn</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Twitter</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% static '129748.JPG' %}">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog/">Blog</a></li>
               </ul>
             </div>
           </nav>
@@ -31,10 +32,30 @@
             <p class="lead">Hey, I love to work as Full Stack Developer,i also worked in Product Engineering Team in Forsys for 2 Years.I also interested in writing and reading blogs,Some of my blogs are below.</p>
             <!-- <hr class="my-4"> -->
             <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+            <img class="img-fluid" src="{% static 'Naveen.jpg' %}" alt="" srcset="" height="300"  width="10%"> 
             <br>
-            <a class="btn btn-primary btn-lg" href="mailto:naveenkumarvanapalli@gmail.com" role="button">Mail me</a>
+            <br>
+            <p>
+                <a class="btn btn-primary btn-lg" href="mailto:naveenkumarvanapalli@gmail.com" role="button">Mail me</a>
+            </p>
           </div>
     </main>
+    <div class="album py-5 bg-light">
+      <div class="container">
+  
+        <div class="row">
+          {% for job in jobs.all %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img src="{{job.image.url}}" alt="{{job.image.url}}" srcset="">
+              <div class="card-body">
+                <p class="card-text">{{job.summary}}</p>
+              </div>
+            </div>
+          </div>
+{% endfor%}
+          </div>
+          </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

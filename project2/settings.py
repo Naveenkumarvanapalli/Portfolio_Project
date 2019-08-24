@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'portfolio',
         'USER': 'djangodb',
         'PASSWORD': 'djangodbman',
-        'HOST': '35.200.232.249',   # Or an IP Address that your DB is hosted on
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }

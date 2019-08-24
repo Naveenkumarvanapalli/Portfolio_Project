@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,16 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Naveen Kumar Vanapalli</a>
+            <a class="navbar-brand" href="{% url 'home'%}">Naveen Kumar Vanapalli</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#">LinkedIn</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Twitter</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
-                <li class="nav-item active"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/naveen-kumar-vanapalli-647b6a137/" target="_blank">LinkedIn</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://twitter.com/1825Naveenkumar" target="_blank">Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% static '129748.JPG' %}">Resume</a></li>
+                <li class="nav-item active"><a class="nav-link" href="{% url 'allblog'%}">Blog</a></li>
               </ul>
             </div>
           </nav>
@@ -33,7 +34,7 @@
       <hr>
       {% for blog in blogs.all%}
       
-      <a href="{{blog.id}}"><h3>{{blog.title}}</h3></a>
+      <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>
       <p>{{blog.pub_date_pretty}}</p>
       <img class="img-fluid" src="{{blog.image.url}}" alt="" >
       <br>

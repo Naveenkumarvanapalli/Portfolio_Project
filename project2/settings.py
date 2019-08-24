@@ -81,9 +81,9 @@ DATABASES = {
         # 'NAME': 'mydatabase'
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'portfolio',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
+        'USER': 'djangodb',
+        'PASSWORD': 'djangodbman',
+        'HOST': '35.200.232.249',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
